@@ -1,0 +1,49 @@
+{
+  "project": "MDA691 \u2014 Real-Time Data with Agentic AI for Industrial PdM",
+  "student": "Amit Shrestha (MIT252463)",
+  "updated": "2026-09-10",
+  "folders": {
+    "reports": [
+      {
+        "file": "MDA691_Assignment2_Group_Report_SUBMISSION.docx",
+        "size_bytes": 3298012
+      },
+      {
+        "file": "MDA691_Assignment2_Individual_Report_Amit_Shrestha.docx",
+        "size_bytes": 41597
+      }
+    ],
+    "diagrams": [
+      {
+        "file": "MDA691_Figure1_Block_Diagram_Assignment.png",
+        "size_bytes": 429223
+      },
+      {
+        "file": "MDA691_PdM_Block_Diagram_37in1_Sensors.png",
+        "size_bytes": 406329
+      },
+      {
+        "file": "MDA691_Project_Architecture_Plan.png",
+        "size_bytes": 339551
+      }
+    ],
+    "dashboard": [
+      {
+        "file": "README.md",
+        "size_bytes": 734
+      },
+      {
+        "file": "app.js",
+        "size_bytes": 4862
+      },
+      {
+        "file": "index.html",
+        "size_bytes": 4577
+      },
+      {
+        "file": "styles.css",
+        "size_bytes": 8421
+      }
+    ]
+  }
+}
