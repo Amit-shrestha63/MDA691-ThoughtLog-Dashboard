@@ -2,10 +2,6 @@
 
 Interactive prototype for **Real-Time Data with Agentic AI for Industrial Predictive Maintenance (PdM)** on the runlinc E32W platform.
 
-## Local files on your Mac
-
-See **[LOCAL_SETUP.md](LOCAL_SETUP.md)** — run `local/scripts/sync-to-mac-desktop.sh` on your Mac to copy reports, diagrams, and this dashboard to `~/Desktop/MDA691_Local/`.
-
 ## Open
 
 Double-click `index.html` or run:

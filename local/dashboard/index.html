@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>runlinc Agentic PdM — Thought Log Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">runlinc</span>
+      <span class="brand-sub">Agentic PdM · E32W Lab</span>
+    </div>
+    <nav class="top-meta">
+      <span class="pill ok" id="mqttPill"><i></i> MQTT connected</span>
+      <span class="pill ok" id="devicePill"><i></i> E32W-01 online</span>
+      <span class="clock" id="clock">—</span>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel live" aria-labelledby="live-title">
+      <div class="panel-head">
+        <h2 id="live-title">Live Features</h2>
+        <span class="tag">1 s window · 50% overlap</span>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-label">RMS</span>
+          <span class="metric-value" id="rms">0.42</span>
+          <span class="metric-unit">g</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Peak–Peak</span>
+          <span class="metric-value" id="peak">1.80</span>
+          <span class="metric-unit">g</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Crest</span>
+          <span class="metric-value" id="crest">3.10</span>
+          <span class="metric-unit">—</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Temp</span>
+          <span class="metric-value" id="temp">38.2</span>
+          <span class="metric-unit">°C</span>
+        </div>
+      </div>
+      <div class="fft">
+        <div class="fft-label">FFT bands</div>
+        <div class="fft-bars" id="fftBars"></div>
+      </div>
+    </section>
+
+    <section class="panel rul" aria-labelledby="rul-title">
+      <div class="panel-head">
+        <h2 id="rul-title">RUL Trend</h2>
+        <span class="tag">LSTM · C-MAPSS / lab features</span>
+      </div>
+      <div class="rul-hero">
+        <div>
+          <div class="rul-hours" id="rulHours">142</div>
+          <div class="rul-caption">hours remaining (est.)</div>
+        </div>
+        <div class="rul-confidence">
+          <span>Confidence</span>
+          <strong id="rulConf">86%</strong>
+        </div>
+      </div>
+      <svg class="rul-chart" id="rulChart" viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="shap">
+        <span class="shap-title">SHAP drivers</span>
+        <div class="shap-row"><span>RMS rise</span><div class="bar"><i style="width:78%"></i></div></div>
+        <div class="shap-row"><span>0–50 Hz energy</span><div class="bar"><i style="width:61%"></i></div></div>
+        <div class="shap-row"><span>Temp drift</span><div class="bar"><i style="width:34%"></i></div></div>
+      </div>
+    </section>
+
+    <section class="panel thought" aria-labelledby="thought-title">
+      <div class="panel-head">
+        <h2 id="thought-title">Thought Log</h2>
+        <span class="tag">auditable agent trace</span>
+      </div>
+      <div class="thought-stream" id="thoughtStream"></div>
+    </section>
+
+    <section class="panel alerts" aria-labelledby="alerts-title">
+      <div class="panel-head">
+        <h2 id="alerts-title">Alert History</h2>
+        <span class="tag">ISO reflex + agent flags</span>
+      </div>
+      <ul class="alert-list" id="alertList"></ul>
+    </section>
+
+    <section class="panel erp" aria-labelledby="erp-title">
+      <div class="panel-head">
+        <h2 id="erp-title">Simulated ERP</h2>
+        <span class="tag">schema-valid tools</span>
+      </div>
+      <div class="erp-actions" id="erpActions"></div>
+    </section>
+
+    <footer class="status-bar" role="status">
+      <span><strong>Status</strong> Device online · MQTT connected · Agent latency <span id="latency">3.4</span> s</span>
+      <span class="nfr">NFR: ≥80% structured output · 100% schema-valid tools · human review flag</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
